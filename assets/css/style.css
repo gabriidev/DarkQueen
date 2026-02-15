@@ -1,0 +1,49 @@
+/*!
+ * =====================================================
+ *  DarkQueen CSS v1.1.0
+ *  https://github.com/gabriidev/DarkQueen
+ *  © 2026 gabriidev
+ *  App de películas y series
+ * =====================================================
+ */
+
+:root{--bg-color:#0b0b0b;--sidebar-color:#121212;--accent-color:#1b5e20;--accent-hover:#2e7d32;--text-primary:#ffffff;--text-secondary:#a0a0a0;--card-bg:#1a1a1a;--sidebar-width:260px;}
+*{-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;-ms-user-select:none;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Roboto',sans-serif;background-color:var(--bg-color);color:var(--text-primary);display:flex;height:100vh;overflow:hidden;}
+nav{width:var(--sidebar-width);background-color:var(--sidebar-color);height:100vh;display:flex;flex-direction:column;transition:transform 0.3s ease;position:fixed;left:0;z-index:2000;border-right:1px solid #222;}
+nav.closed{transform:translateX(-100%);}
+.brand{display:flex;align-items:center;padding:25px;gap:15px;}
+.brand img{width:35px;height:35px;border-radius:5px;background-color:var(--accent-color);}
+.brand h1{font-size:1.4rem;margin:0;color:var(--accent-hover);}
+.menu-items{flex-grow:1;padding:0 15px;}
+.menu-item{display:flex;align-items:center;padding:12px 15px;margin-bottom:5px;border-radius:10px;text-decoration:none;cursor:pointer;color:var(--text-secondary);transition:0.2s;}
+.menu-item:hover,.menu-item.active{background-color:var(--accent-color);color:white;text-decoration:none;}
+.menu-item i{margin-right:15px;}
+.version-tag{padding:20px;font-size:0.75rem;color:#444;text-align:center;}
+main{flex-grow:1;width:100%;margin-left:var(--sidebar-width);transition:margin 0.3s ease;height:100vh;display:flex;flex-direction:column;}
+main.full-width{margin-left:0;}
+header{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;background-color:var(--bg-color);}
+.header-left,.header-right{display:flex;align-items:center;gap:15px;}
+.header-right{position:relative;}
+.icon-btn{cursor:pointer;font-size:28px;color:white;transition:0.2s;}
+.icon-btn:hover{color:var(--accent-hover);}
+.genres-bar{padding:10px 20px;display:flex;gap:10px;overflow-x:auto;white-space:nowrap;}
+.genres-bar::-webkit-scrollbar{display:none;}
+.genre-chip{padding:8px 18px;background-color:#1e1e1e;border-radius:20px;cursor:pointer;font-size:0.9rem;border:1px solid #333;}
+.genre-chip.active{background-color:var(--accent-color);border-color:var(--accent-hover);}
+.movies-grid{flex-grow:1;padding:10px;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(calc(100% / 3 - 10px),1fr));gap:15px;align-content:start;}
+.card{background:var(--card-bg);border-radius:8px;text-align:center;overflow:hidden;transition:transform 0.3s ease;cursor:pointer;}
+.card:hover{transform:scale(1.03);}
+.card img{width:100%;aspect-ratio:2 / 3;object-fit:cover;border-radius:6px;display:block;}
+.modal-more{display:none;position:absolute;top:45px;right:0;background-color:var(--sidebar-color);border:1px solid #333;border-radius:8px;width:160px;box-shadow:0 10px 30px rgba(0,0,0,0.8);z-index:3000;}
+.modal-more div{padding:15px;cursor:pointer;}
+.modal-more div:hover{background-color:var(--accent-color);}
+#overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1500;}
+@media (max-width:992px){main{margin-left:0;}
+nav{transform:translateX(-100%);}
+nav.open{transform:translateX(0);}
+#overlay.active{display:block;}
+}
+@media (min-width:768px){.movies-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+}
