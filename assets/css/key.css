@@ -1,0 +1,14 @@
+/*!
+ * =====================================================
+ *  DarkQueen CSS v1.1.0
+ *  https://github.com/gabriidev/DarkQueen
+ *  © 2026 gabriidev
+ *  App de películas y series
+ * =====================================================
+ */
+
+* {
+  -webkit-tap-highlight-color: var(--highlight-color);
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
